@@ -75,6 +75,16 @@ function filterChannelsWithEmptyContact (notif /* : TemplateType */) {
   return notif
 }
 
+function getRenderFunction (renderer /* : RendererType */, options /* : OptionsType */ = {}) {
+    return (template /* : Object */, data /* : Object */) /* : Promise<TemplateType> */ => {
+        return new Promise((resolve) => {
+            render(renderer, template, data).then((notification) => {
+                resolve(inlineCss(filterChannelsWithEmptyContact(notification), options.juice))
+            })
+        })
+    }
+}
+
 module.exports = (renderer /* : RendererType */, folder /* : string */, options /* : OptionsType */ = {}) => {
   return (templateName /* : string */, data /* : Object */, lang /* : string */ = '') /* : Promise<TemplateType> */ => {
     return new Promise((resolve) => {
@@ -85,4 +95,9 @@ module.exports = (renderer /* : RendererType */, folder /* : string */, options 
       })
     })
   }
+}
+
+module.exports = {
+    getRenderFunction,
+    getTemplateFromName
 }

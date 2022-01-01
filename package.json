@@ -13,15 +13,15 @@
     "test": "yarn run lint"
   },
   "devDependencies": {
-    "flow-bin": "^0.53.1",
-    "node-sass": "^4.5.3",
-    "notification-catcher": "^1.0.3",
-    "notifme-sdk": "^1.0.1",
-    "nunjucks": "^3.0.1",
-    "standard": "^10.0.3"
+    "flow-bin": "^0.168.0",
+    "node-sass": "^7.0.1",
+    "notification-catcher": "^1.2.1",
+    "notifme-sdk": "^1.11.0",
+    "nunjucks": "^3.2.3",
+    "standard": "^16.0.4"
   },
   "optionalDependencies": {
-    "juice": "^4.1.0"
+    "juice": "^8.0.0"
   },
   "files": [
     "index.js",
